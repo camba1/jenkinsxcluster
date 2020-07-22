@@ -8,6 +8,8 @@ terraform {
 module "jx" {
   source = "jenkins-x/jx/google"
   gcp_project = "nodal-fountain-283919"
+  cluster_name = "tf-jx-fond-mantis"
+  force_destroy = true
 }
 
 output "jx_requirements" {

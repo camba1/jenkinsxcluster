@@ -1,0 +1,46 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+cluster:
+  clusterName: "tf-jx-fond-mantis"
+  devEnvApprovers: []
+  environmentGitOwner: ""
+  project: "nodal-fountain-283919"
+  provider: gke
+  zone: "us-central1-a"
+gitops: true
+environments:
+- key: dev
+- key: staging
+- key: production
+ingress:
+  domain: ""
+  externalDNS: false
+  tls:
+    email: ""
+    enabled: false
+    production: true
+kaniko: true
+storage:
+  backup:
+    enabled: false
+  logs:
+    enabled: true
+    url: gs://logs-tf-jx-fond-mantis-f9de8f293800
+  reports:
+    enabled: true
+    url: gs://reports-tf-jx-fond-mantis-f9de8f293800
+  repository:
+    enabled: true
+    url: gs://repository-tf-jx-fond-mantis-f9de8f293800
+secretStorage: vault
+vault:
+  name: tf-jx-fond-mantis
+  bucket: vault-tf-jx-fond-mantis-f9de8f293800
+  key: crypto-key-tf-jx-fond-mantis-f9de8f293800
+  keyring: keyring-tf-jx-fond-mantis-f9de8f293800
+  serviceAccount: tf-jx-fond-mantis-vt
+versionStream:
+  ref: master
+  url: https://github.com/jenkins-x/jenkins-x-versions.git
+webhook: "lighthouse"
